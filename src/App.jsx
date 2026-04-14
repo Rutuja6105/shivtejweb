@@ -450,11 +450,6 @@ export default function App() {
           {isTreasurer ? (
             <>
               <div style={Z.tChip}><Ic n="shield" s={11} c="#d4a012"/> खजिनदार</div>
-              <button onClick={doExport} style={Z.iconBtn} title="Export Backup">
-                <svg width={17} height={17} viewBox="0 0 24 24" fill="none" stroke="#2d9e6b88" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
-                </svg>
-              </button>
               <button onClick={doLogout} style={Z.iconBtn} title="Logout"><Ic n="out" s={17} c="#6a4820"/></button>
             </>
           ) : (
@@ -527,9 +522,6 @@ function LoginModal({ onLogin, onClose }) {
             onChange={e=>setP(e.target.value)} onKeyDown={e=>e.key==="Enter"&&go()}
             placeholder="Password टाका" autoComplete="current-password"/>
           <button onClick={()=>setSp(!sp)} style={Z.eyeBtn}><Ic n={sp?"eyeoff":"eye"} s={16} c="#5a3a18"/></button>
-        </div>
-        <div style={{background:"#0a0800",border:"1px solid #1e1408",borderRadius:8,padding:"8px 12px",fontSize:11,color:"#3a2810",marginBottom:16}}>
-          Default · <span style={{color:"#d4a012"}}>treasurer</span> / <span style={{color:"#d4a012"}}>shivtej@2025</span>
         </div>
         <button onClick={go} disabled={busy} style={{...Z.goldBtn,opacity:busy?0.6:1,width:"100%",borderRadius:12,padding:"13px"}}>
           {busy?"Verifying…":"🔑 जय शिवाजी · Login"}
